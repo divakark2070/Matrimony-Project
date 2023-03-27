@@ -1,0 +1,73 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Floating labels Form</h5>
+
+    <!-- Floating Labels Form -->
+    <form class="row g-3" [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="planname" placeholder="Plan name">
+          <label for="floatingName">Plan name</label>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="amount" placeholder="Amount">
+          <label for="floatingName">Amount</label>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="duration" placeholder="Duration">
+          <label for="floatingName">Duration</label>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="profileviews" placeholder="Profileviews">
+          <label for="floatingName">Profileviews</label>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" (click)="reset()" class="btn btn-secondary ms-2">Reset</button>
+      </div>
+    </form><!-- End floating Labels Form -->
+
+    <hr>
+
+    <div class="col-md-12 mt-4">
+
+      <h3 style="font-weight: 600;" class="text-center">Users Data</h3>
+
+      <table class="table table-stripped">
+
+        <thead>
+          <tr>
+            <td>Sr no</td>
+            <td>Plan Name</td>
+            <td>Amount</td>
+            <td>Duration</td>
+            <td>Profileviews</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let d of datas,let i = index">
+            <td>{{i+1}}</td>
+            <td>{{d.planname}}</td>
+            <td>{{d.amount}}</td>
+            <td>{{d.duration}}</td>
+            <td>{{d.profileviews}}</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>
